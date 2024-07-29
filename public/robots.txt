@@ -1,0 +1,5 @@
+- Implement redux
+- Implement use effect and use API
+- Implement use effect
+- Add effect
+- Improve animation

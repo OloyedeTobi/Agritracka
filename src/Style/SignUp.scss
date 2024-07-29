@@ -1,0 +1,205 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+@include ambit-black;
+@include ambit-regular;
+@include ambit-bold;
+@include ambit-thin;
+
+.su-con{
+    height: 100vh;
+    width:100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    background-color: $tetiary-col;
+    position: absolute;
+
+
+    .left-img{
+        position: relative;
+        max-width: 50%;
+        height: 100%;
+        border-radius: 25%;
+        z-index: 1;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2000;
+            border-radius: 0 25px 25px 0;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, $primary-bg 0%, $secondary-col 100%);
+            opacity: 0.5;
+            z-index: 1;
+            border-radius: 0 25px 25px 0;
+          }
+    }
+   .flex{
+
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .form{
+        position: relative;
+
+        .bg-fig{
+            position: absolute;
+            top: 20%;
+            left: -50%;
+            color: $tetiary-col;
+            opacity: 0.025;
+            width: 80vw;
+            z-index: 0;
+        }
+        
+
+        .center{
+            text-align: center;
+        }
+
+        // .divider, .alt-su{
+        //     padding: 0 1.8em;
+        // }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1em 0;
+
+            p{
+                font-family: $ambit-bold;
+                color: $secondary-col;
+            }
+          }
+          
+          .divider::before,
+          .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid $primary-col; 
+            margin: 0 10px; 
+          }
+
+        input{
+            margin-top: 0.5em;
+            margin-bottom: 1.8em;
+            border: none;
+            border-radius: 6px;
+            // border: 1px solid $secondary-col;
+            width: 100%;
+            outline: none;
+            cursor:text;
+            font-size: 0.9rem;
+            color: rgba(0,0,0, 0.8);
+            font-family: $ambit-normal;
+
+        }
+
+        label{
+            font-family: $ambit-bold;
+            margin-bottom: 1em;
+            color: $secondary-col;
+        }
+
+        h1{
+            font-family: $ambit-black;
+            color: $primary-col;
+            font-size: 3em;
+
+            span{
+                color: $secondary-col;
+                font-family: $ambit-black;
+                font-weight: 900;
+            }
+        }
+
+        .fn-ln{
+            font-family: $ambit-bold;
+            color: $secondary-col;
+            margin: auto 6px;
+            align-items: center;
+            padding: 0 1.8em;
+            z-index: 100;
+            // background-image: url('../../public/img/flower.svg');
+
+
+            input{
+                cursor: text;
+                z-index: 100;
+            }
+
+            div{
+
+                .in{
+                    max-width: 100%;
+                    padding-left: 0.7em;
+                    padding-top: 0.7em;
+                    padding-bottom: 0.7em;
+                    
+                }
+            }
+
+
+            .su{
+                width: 100%;
+                border-radius: 5px;
+
+                input{
+
+                      font-family: $ambit-bold;
+                      padding: 0.7em 0;
+                      font-size: 1rem;
+                      border: none;
+                      width: 100%;
+                      background-color: $secondary-col;
+                      color: $tetiary-col;
+                      margin-bottom: 1em;
+                      cursor: text;
+                }
+            }
+
+
+        }
+
+
+        .alt-su{
+            margin-top: 0.5em;
+            margin-bottom: 1em;
+
+            button{
+                padding:  0.5em;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                width: 100%;
+                height: 100%;
+                outline: none;
+                cursor: pointer;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-family: $ambit-bold;
+                color: $secondary-col;
+
+                img{
+                    width: 30px; 
+                    object-fit: contain; 
+                    padding: 0 0.2em;
+                }
+            }
+        }
+    }
+ }
+}

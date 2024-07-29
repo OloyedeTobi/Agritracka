@@ -1,0 +1,34 @@
+@import "variables.scss";
+@import 'mixins.scss';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 6rem;
+
+    .logo{
+        font-size: 2em;
+        color: $primary-col;
+        font-family: $ambit-black;
+    }
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+
+        a{
+            padding: 0 2rem;
+            text-decoration-line: none;
+            font-weight: 700;
+            color: #fff;
+            font-family: $ambit-normal;
+        }
+    }
+}
+
+@include ambit-regular;
+@include ambit-black;
+@include ambit-bold;
+@include ambit-thin;

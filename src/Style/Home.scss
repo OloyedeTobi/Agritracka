@@ -1,0 +1,164 @@
+@import "variables.scss";
+@import 'mixins.scss';
+.home-body{
+    background-color: $secondary-col;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    .centered{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .flex-con{
+            padding: 0 12em;
+
+            .main-text{
+                font-family: $ambit-black;
+                font-size: 2.7em;
+                color: $primary-col;
+                max-width: 70%;
+            }
+
+            .cta{
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                max-width: 50%;
+                margin-bottom: 4em;
+
+                .spanner{
+                    display: flex;
+                    justify-content:space-between;
+
+                    div{
+                       color: #fff;
+                        display: flex;
+                        align-items: center;
+                        padding-right: 2px;
+
+                        span{
+                            font-family: $ambit-normal;
+                            margin-right: 2px;
+                        }
+                    }
+
+                    button{
+                        border: none;
+                        font-family: $ambit-bold;
+                        background-color: transparent;
+                        color: $tetiary-col;
+                        font-size: 1.5rem;
+                        outline: none;
+                    }
+
+                    .wave-text {
+                        position: relative;
+                        display: inline-block;
+                        font-size: 2rem;
+                        color: $tetiary-col;
+                        cursor: pointer;
+                        text-decoration: none;
+
+                          .lg {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            pointer-events: none;
+                            fill: none;
+                            stroke: $primary-col;
+                            stroke-width: 2px;
+                        }
+
+                        &:hover{
+                            color: #fff;
+                        }
+
+                        .lg-stroke path {
+                            stroke-dasharray: 1;
+                            stroke-dashoffset: 1;
+                        }
+                        
+                        &:hover .lg-stroke path {
+                            stroke-dashoffset: 0;
+                        }
+                        
+                        
+                        .lg-arc {
+                            top: 73%;
+                            left: -23%;
+                        }
+                        
+                        .lg-arc path {
+                            transition: stroke-dashoffset 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+                        }
+                        
+                        &:hover .link__graphic--arc path {
+                            transition-timing-function: cubic-bezier(0.8, 1, 0.7, 1);
+                            transition-duration: 0.3s;
+                        }
+                        
+                      }
+                      
+                }
+            }
+
+        }
+    }
+
+    .image-block{
+        position: absolute;
+        bottom: -7em;
+        right: -3em;
+        animation: slide 40s linear infinite;
+        display: flex;
+        justify-content: space-between;
+
+        img{
+            color: $primary-col;
+            width: 250px;
+        }
+          
+        @keyframes slide {
+            0% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+    }
+
+    .decor-text{
+        position: absolute;
+        right: 10%; /* Aligns text to the right edge */
+        top: 50%; /* Centers text vertically */
+        transform: translateY(-50%);
+      font-size: 18rem;
+      font-weight: bold;
+      writing-mode: vertical-rl;
+      color: $tetiary-col;
+      opacity: 0.2;
+    }
+    
+}
+
+.non-link{
+    color: $tetiary-col;
+    text-decoration: none;
+
+    &:focus, &:active, &:visited{
+        text-decoration: none;
+        color: $tetiary-col;
+    }
+
+    &:hover{
+        color: #fff;
+    }
+}
+
+@include ambit-regular;
+@include ambit-black;
