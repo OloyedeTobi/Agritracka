@@ -4,7 +4,9 @@ import { login, signup } from '../Services/api';
 export const loginUser = createAsyncThunk('auth/loginUser', async ({ username, password }, thunkAPI) => {
     try {
         const response = await login(username, password);
-        localStorage.setItem('authToken', response.data.token);
+        const access_token = response.access_token; 
+        // localStorage.setItem('authToken', "yesssssssss");
+        localStorage.setItem('authToken', access_token);
         return response;
     } catch (error) {
         return thunkAPI.rejectWithValue(error.response.data);
@@ -27,7 +29,7 @@ const authSlice = createSlice({
         loading: false,
         error: null,
         successMessage: null,
-        user: JSON.parse(localStorage.getItem('authToken')) || null,
+        authToken: localStorage.getItem('authToken') || null,
     },
     reducers: {
         logout(state) {

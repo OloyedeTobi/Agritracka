@@ -4,12 +4,13 @@ const api = axios.create({
     baseURL: 'http://3.80.150.235:8000',
 });
 
-const getToken = () => {
-    return localStorage.getItem('authToken');
-}
 
 export const login = async (username, password) => {
     const response = await api.post('/api/login', { username, password });
+    if (response.data && response.data.access_token) {
+        localStorage.setItem('authToken', response.data.access_token);
+        console.log("local storage set", localStorage.getItem('authToken'))
+    }
     return response.data;
 };
 
@@ -19,14 +20,19 @@ export const signup = async (firstName, lastName, email, password) => {
 };
 
 export const predict = async (light, temperature, humidity, soilMoisture) => {
-    const token = getToken();
+    const token = localStorage.getItem('authToken');
+    console.log(token)
+    if (!token) {
+        throw new Error('No auth token found');
+    }
     const response = await api.post(
-                                '/api/predict', 
-                                { light, temperature, humidity, soil_moisture: soilMoisture }, 
-                                {
-                                headers: {
-                                    Authorization: `Bearer ${token}`,
-                                },
-                            });
+        '/api/predict', 
+        { intensity: light, temperature, humidity, soil_moisture: soilMoisture }, 
+        {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }
+    );
     return response.data;
 };

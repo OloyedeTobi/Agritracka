@@ -30,7 +30,7 @@ const Tracka = () => {
                             <input
                                 type="number"
                                 value={light}
-                                onChange={(e) => setLight(e.target.value)}
+                                onChange={(e) => setLight(parseFloat(e.target.value))}
                                 placeholder="Light Intensity"
                                 required
                             />
@@ -40,7 +40,7 @@ const Tracka = () => {
                             <input
                                 type="number"
                                 value={temperature}
-                                onChange={(e) => setTemperature(e.target.value)}
+                                onChange={(e) => setTemperature(parseFloat(e.target.value))}
                                 placeholder="Temperature"
                                 required
                             />
@@ -50,7 +50,8 @@ const Tracka = () => {
                             <input
                                 type="number"
                                 value={humidity}
-                                onChange={(e) => setHumidity(e.target.value)}
+                                onChange={(e) => setHumidity(parseFloat
+                                    (e.target.value))}
                                 placeholder="Humidity"
                                 required
                             />
@@ -59,7 +60,7 @@ const Tracka = () => {
                             <label>Soil Moisture</label>
                             <select
                                 value={soilMoisture}
-                                onChange={(e) => setSoilMoisture(e.target.value)}
+                                onChange={(e) => setSoilMoisture(parseInt(e.target.value))}
                                 required
                             >
                                 <option value="" disabled>Select soil moisture</option>
