@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from "./Header";
 import "../Style/Home.scss";
 import { Link } from "react-router-dom";
@@ -19,7 +20,7 @@ const Home = () => {
                             <div className="sign-up spanner">
                                 <div>
                                     <span>New User</span>
-                                    <img src="/assets/arrow_forward.svg" />
+                                    <img src="/assets/arrow_forward.svg" alt=''/>
                                 </div>
                                 <button className="wave-text act-btn">
                                     <span><Link to="/signup" className="non-link">Sign up</Link></span>
@@ -29,7 +30,7 @@ const Home = () => {
                             <div className="login spanner">
                                 <div>
                                     <span>Existing Account</span>
-                                    <img src="/assets/arrow_forward.svg" />
+                                    <img src="/assets/arrow_forward.svg" alt='' />
                                 </div>
                                 <button className="wave-text act-btn">
                                     <span><Link to="/login" className="non-link">Login</Link></span>
@@ -43,7 +44,7 @@ const Home = () => {
                             <div className="login spanner">
                                 <div>
                                     <span>Want to try it out?</span>
-                                    <img src="/assets/arrow_forward.svg" />
+                                    <img src="/assets/arrow_forward.svg" alt='' />
                                 </div>
                                 <button className="wave-text act-btn">
                                     <span><Link to="/tracker" className="non-link">Tracker</Link></span>
@@ -60,16 +61,16 @@ const Home = () => {
                     </div>
                 <div className="image-block">
                     
-                    <img src="/img/avocado-tree-bro1.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro2.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro1.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro2.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro1.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro2.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro1.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro2.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro1.png" className="spotlight"/>
-                    <img src="/img/avocado-tree-bro2.png" className="spotlight"/>
+                    <img src="/img/avocado-tree-bro1.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro2.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro1.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro2.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro1.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro2.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro1.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro2.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro1.png" className="spotlight" alt=''/>
+                    <img src="/img/avocado-tree-bro2.png" className="spotlight" alt=''/>
 
                 </div>
                 <div className="decor-text"> 

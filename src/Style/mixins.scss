@@ -3,27 +3,27 @@
 @mixin ambit-regular{
     @font-face {
         font-family: $ambit-normal;
-        src: url(../../public/ambit/Ambit-Regular.otf);
+        src: url(../assets/ambit/Ambit-Regular.otf);
     }
 }
 
 @mixin ambit-bold{
     @font-face {
         font-family: $ambit-bold;
-        src: url(../../public/ambit/Ambit-Bold.otf);
+        src: url(../assets/ambit/Ambit-Bold.otf);
     }
 }
 
 @mixin ambit-black{
     @font-face {
         font-family: $ambit-black;
-        src: url(../../public/ambit/Ambit-Black.otf);
+        src: url(../assets/ambit/Ambit-Black.otf);
     }
 }
 
 @mixin ambit-thin{
     @font-face {
         font-family: $ambit-thin;
-        src: url(../../public/ambit/Ambit-Thin.otf);
+        src: url(../assets/ambit/Ambit-Thin.otf);
     }
 }

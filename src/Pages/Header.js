@@ -1,3 +1,4 @@
+import React from 'react';
 import "../Style/Header.scss";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -12,10 +13,10 @@ const Header = () => {
                 Agritracka
             </div>
             <div className="navbar">
-                <a className="active" href="#"><Link to="/"> Home </Link></a>
-                <a href="#">About</a>
-                <a href="#">Contact </a>
-                {user && <a href="#">Log</a>}
+                <a className="active" href="#home"><Link to="/"> Home </Link></a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact </a>
+                {user && <a href="#log">Log</a>}
             </div>
         </div> 
         </>

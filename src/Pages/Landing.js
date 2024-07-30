@@ -1,3 +1,4 @@
+import React from 'react';
 import "../Style/Landing.scss";
 
 const Landing = () => {
