@@ -1,8 +1,10 @@
 import "../Style/Header.scss";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 const Header = () => {
+    const { user } = useSelector((state) => state.auth);
     return(
         <>
         <div className="header">
@@ -13,7 +15,7 @@ const Header = () => {
                 <a className="active" href="#"><Link to="/"> Home </Link></a>
                 <a href="#">About</a>
                 <a href="#">Contact </a>
-                <a className="main-nav" href="#"><Link to="/tracker" >Track Farm </Link></a>
+                {user && <a href="#">Log</a>}
             </div>
         </div> 
         </>

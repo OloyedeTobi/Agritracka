@@ -43,7 +43,7 @@ const Login = () => {
                 <img src='/img/woman-holding-basket-full-different-vegetables.jpg' alt="Decorative" />
                 <div className='overlay'></div>
             </div>
-            <div className='flex'>
+            <div className='flex center'>
                 <div className="form">
                     <h1 className='center'>Welcome back to <span>Agritracka</span></h1>
                     {error && <p className="error">{renderError()}</p>}
