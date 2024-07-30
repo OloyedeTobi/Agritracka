@@ -8,6 +8,7 @@ const SignUp = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const dispatch = useDispatch();
@@ -87,6 +88,17 @@ const SignUp = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         placeholder="Email address"
+                                        className='in'
+                                        required
+                                    />
+                                </div>
+                                <div>
+                                    <label>Select Username</label>
+                                    <input
+                                        type="text"
+                                        value={username}
+                                        onChange={(e) => setUsername(e.target.value)}
+                                        placeholder="Username"
                                         className='in'
                                         required
                                     />

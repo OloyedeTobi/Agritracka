@@ -3,8 +3,10 @@ import Header from './Header';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPrediction } from '../Redux/predictSlice';
 import '../Style/Tracka.scss'; 
+import { Modal } from '../Components/Modal.js';
 
 const Tracka = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const [light, setLight] = useState('');
     const [temperature, setTemperature] = useState('');
     const [humidity, setHumidity] = useState('');
@@ -16,12 +18,32 @@ const Tracka = () => {
     const handlePredict = (e) => {
         e.preventDefault();
         dispatch(getPrediction({ light, temperature, humidity, soilMoisture }));
+        setIsModalOpen(true);
     };
+
+    // const openModal = () => {
+    //     setIsModalOpen(true);
+    //     console.log("I am open")
+    // }
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        console.log("I am closed")
+    }
 
     return (
         <>
         <div className="tracka-con">
             <div className="rel"><Header/></div>
+            <Modal isOpen={isModalOpen} onClose={closeModal} size='large' >
+                {loading && "loading..."}
+                {!loading && prediction && (
+                    <div className="prediction">
+                        <h3>Predicted Plant Growth Status: <span>{prediction.prediction}</span></h3>
+                        <p>{prediction.recommendation}</p>
+                    </div>
+                )}
+            </Modal>
             <div className="centered">
                 <div className="form-center">
                     <form className='form-con' onSubmit={handlePredict}>
@@ -65,15 +87,17 @@ const Tracka = () => {
                             >
                                 <option value="" disabled>Select soil moisture</option>
                                 <option value="0">0 - Low</option>
-                                <option value="1">1 - Normal</option>
+                                <option value="1">1 - Medium</option>
                                 <option value="2">2 - High</option>
                             </select>
                         </div>
-                        <button className="btn" type="submit" disabled={loading}>
-                            {loading ? 'Loading...' : 'Predict'}
-                        </button>
+                        <div className="btn">
+                            <button type="submit" disabled={loading}>
+                                {loading ? 'Loading...' : 'Predict'}
+                            </button>
+                        </div>
                         {error && <p className="error">{typeof error === 'string' ? error : JSON.stringify(error)}</p>}
-                        {prediction && <p className="prediction">Prediction: {prediction.recommendation}</p>}
+                        {/* {prediction && <p className="prediction">Prediction: {prediction.recommendation}</p>} */}
                     </form>
                 </div>
             </div>

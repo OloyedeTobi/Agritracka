@@ -43,48 +43,53 @@ const Login = () => {
                 <img src='/img/woman-holding-basket-full-different-vegetables.jpg' alt="Decorative" />
                 <div className='overlay'></div>
             </div>
-            <div className="form">
-                <h1 className='center'>Welcome back to <span>Agritracka</span></h1>
-                {error && <p className="error">{renderError()}</p>}
-                <form onSubmit={handleSubmit}>
-                    <div className="em-psw">
-                        <div>
-                            <label>Username</label>
-                            <input
-                                type="text"
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                                placeholder="Username"
-                                required
-                            />
-                        </div>
-                        <div>
-                            <label>Password</label>
-                            <input
-                                type="password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                placeholder="Password"
-                                required
-                            />
-                        </div>
-                        <div className='su'>
-                            <button type="submit" disabled={loading}>
-                                {loading ? 'Loading...' : 'Login'}
-                            </button>
-                        </div>
+            <div className='flex'>
+                <div className="form">
+                    <h1 className='center'>Welcome back to <span>Agritracka</span></h1>
+                    {error && <p className="error">{renderError()}</p>}
+                    <form onSubmit={handleSubmit}>
+                        <div className="fn-ln">
+                            <div>
+                                <label>Username</label>
+                                <input
+                                    type="text"
+                                    className='in'
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    placeholder="Username"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label>Password</label>
+                                <input
+                                    type="password"
+                                    className='in'
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    placeholder="Password"
+                                    required
+                                />
+                            </div>
+                            <div className='su'>
+                                <input type='submit' disabled={loading} value={loading ? 'Loading...' : 'Login'} />
+                            </div>
+                       
+                    <div className="divider">
+                        <p>or</p>
                     </div>
-                </form>
-                <div className="divider">
-                    <p>or</p>
+                    <div className="alt-su">
+                        <button>
+                            <img src='/img/google-logo1.png' alt="Google logo" />
+                            <span>Login With Google</span>
+                        </button>
+                    </div>
+                    </div>
+                  </form>
                 </div>
-                <div className="alt-su">
-                    <button>
-                        <img src='/img/google-logo1.png' alt="Google logo" />
-                        <span>Login With Google</span>
-                    </button>
-                </div>
+
             </div>
+           
         </div>
     );
 };
