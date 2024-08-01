@@ -1,8 +1,12 @@
 import axios from 'axios';
+const baseURL = 'http://3.80.150.235:8000';
+console.log('Base url:', baseURL)
 
 const api = axios.create({
-    baseURL: 'http://3.80.150.235:8000',
+    baseURL,
 });
+
+
 
 
 export const login = async (username, password) => {
